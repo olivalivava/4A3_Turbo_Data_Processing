@@ -331,9 +331,9 @@ def set_axes(ax,xlab,ylab):
 def main():
 
     # Specify directory and filename of run to process
-    directory = 'C:\\Users\\Cascade\\Documents\\4A3_Results\\'
+    directory = 'C:\\Users\\olivahuang\\PycharmProjects\\4A3_Turbo_Data_Processing\\'
 #    directory = '/home/james/Documents/Teaching/4A3/4A3_Results/'
-    filename = '4A3_cascade_jvt24_jvt24_12-Oct-2023_1.mat'
+    filename = '4A3_cascade_yh488_yq270_31-Oct-2024_1.mat'
 
     # Read the experimental data
     e = mat73.loadmat(directory + filename); e = e['e'];
