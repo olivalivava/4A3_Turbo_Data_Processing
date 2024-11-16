@@ -331,7 +331,7 @@ def set_axes(ax,xlab,ylab):
 def main():
 
     # Specify directory and filename of run to process
-    directory = 'C:\\Users\\olivahuang\\PycharmProjects\\4A3_Turbo_Data_Processing\\'
+    directory = ''
 #    directory = '/home/james/Documents/Teaching/4A3/4A3_Results/'
     filename = '4A3_cascade_yh488_yq270_31-Oct-2024_1.mat'
 
