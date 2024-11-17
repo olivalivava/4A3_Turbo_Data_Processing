@@ -60,7 +60,7 @@ def exit_traverse(e,N,b):
         sharex='col',num='Exit Traverse')
     cols = gen_cols()
 
-    # Set axes names and formating for subplots
+ #   # Set axes names and formating for subplots
     ynames = ['($P_{01} - P_{02}$) / ($P_{01} - P_{2,av}$)',
               '($P_{1} - P_{2}$) / ($P_{01} - P_{2,av}$)',
               '$V_2$ / $V_{2,s}$',r'$\alpha_2 / ^\circ$']
@@ -194,7 +194,7 @@ def lift_distribution(e,N,t,b):
     s['Cp'] = (Po_1 - P) / (Po_1 - P_2)
 
     # Isentropic velocity ratio
-    s['Vs_V2s'] = s['Cp']**0.5
+    s['Vs_V2s'] = abs(s['Cp'])**0.5  #added abs() to cope with negative cp
 
     # Plot the measured velocity distribution
     ax.plot(s['xy'][:,0],s['Vs_V2s'],'.-',color=cols[0,:],label='Measured')
