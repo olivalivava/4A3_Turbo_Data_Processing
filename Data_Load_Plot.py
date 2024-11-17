@@ -208,6 +208,25 @@ def lift_distribution(e,N,t,b):
     s['Zx'] = np.trapz(s['Cp'],x=s['xy'][:,1])
     s['Zy'] = np.trapz(s['Cp'],x=s['xy'][:,0])
 
+    # Figure window for cp variation
+    h = plt.figure('Cp-y'); ax = plt.gca();
+    set_axes(ax,'y / Cx','$C_p$')
+    cols = gen_cols()
+    # Plot ...
+    ax.plot(s['Cp'],s['xy'][:,1],'.-',
+            color=cols[1,:],label='cp-y')
+    ax.legend()
+
+    # Figure window for cp variation
+    h = plt.figure('Cp-x'); ax = plt.gca();
+    set_axes(ax,'x / Cx','$C_p$')
+    cols = gen_cols()
+    # Plot ...
+    ax.plot(s['Cp'],s['xy'][:,0],'.-',
+            color=cols[1,:],label='cp-x')
+    ax.legend()
+
+
     # Record gas constants
     q = np.in1d(e['t'],e['t_lift'])
     s['R'] = e['R'][q]; s['T'] = e['T'][q]; s['ga'] = e['ga'][q];
