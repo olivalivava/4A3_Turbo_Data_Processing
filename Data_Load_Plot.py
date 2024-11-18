@@ -208,6 +208,7 @@ def lift_distribution(e,N,t,b):
     s['Zx'] = np.trapz(s['Cp'],x=s['xy'][:,1])
     s['Zy'] = np.trapz(s['Cp'],x=s['xy'][:,0])
 
+    #########################################
     # Figure window for cp variation
     h = plt.figure('Cp-y'); ax = plt.gca();
     set_axes(ax,'y / Cx','$C_p$')
@@ -225,7 +226,7 @@ def lift_distribution(e,N,t,b):
     ax.plot(s['Cp'],s['xy'][:,0],'.-',
             color=cols[1,:],label='cp-x')
     ax.legend()
-
+    #######################################
 
     # Record gas constants
     q = np.in1d(e['t'],e['t_lift'])
@@ -235,6 +236,7 @@ def lift_distribution(e,N,t,b):
     # Isentropic surface velocities
     V2s = ((Po_1 - P_2) / (0.5 * s['ro']))**0.5
     s['Vs'] = s['Vs_V2s'] * V2s
+    print(s['Vs_V2s'])
 
     # Print quantities to screen
     print('3 - Blade Surface Pressure Distribution\n\nProcessed from blade tappings & tunnel')
